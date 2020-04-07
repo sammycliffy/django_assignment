@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  />
+    <link rel="stylesheet" href="{% static 'app/bootstrap/bootstrap.css'  %" />
+    <style>
+      table tr th {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <h2 class="page-header">Hello! Statistical Details</h2>
+    <table class="table table-hover table-bordered table-shrinked">
+      <tr>
+        <th>Malaria</th>
+        <td>{{data.malaria}}</td>
+      </tr>
+      <tr>
+        <th>Typhoid</th>
+        <td>{{data.typhoid}}</td>
+      </tr>
+      <tr>
+        <th>Diarrhea</th>
+        <td>{{data.diarrhea}}</td>
+      </tr>
+      <tr>
+        <th>Headaches</th>
+        <td>{{data.headaches}}</td>
+      </tr>
+        <th>Cholera</th>
+        <td>{{data.cholera}}</td>
+      </tr>
+      <tr>
+        <th>Ebola</th>
+        <td>{{data.ebola}}</td>
+      </tr>
+    </table>
+      </div>
+  </body>
+</html>

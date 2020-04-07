@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'app/bootstrap/bootstrap.css'  %" />
+    <style>
+      table tr th {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br />
+    <div class="container">
+      <form action="{% url 'filters' %}" method="GET">
+        <select name="filter" id="">
+          <option class="form-control" value="Malaria">Malaria</option>
+          <option class="form-control" value="Typhoid">Typhoid</option>
+          <option class="form-control" value="Diarrhea">Diarrhea</option>
+          <option class="form-control" value="Headaches">Headaches</option>
+          <option class="form-control" value="Cholera">Cholera</option>
+          <option class="form-control" value="Ebola">Ebola</option>
+        </select>
+        <br /><br />
+        <input type="submit" value="filter" class="btn  btn-success" />
+      </form>
+      <br />
+      <table class="table table-hover table-bordered">
+        <tr>
+          <th>Names</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Phone No</th>
+          <th>Sickness</th>
+        </tr>
+        {% for obj in filters %}
+        <tr>
+          <td>{{obj.user.first_name}}</td>
+          <td>{{obj.user.last_name}}</td>
+          <td>{{obj.user.email}}</td>
+          <td>{{obj.user.profile.phone}}</td>
+          <td>{{obj.user.profile.type_of_sickness}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
