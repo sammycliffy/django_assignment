@@ -13,13 +13,11 @@
   <body>
     <div class="container">
       <h2 class="page-header">Welcome {{request.user.username}}</h2>
+      <hr />
       <p>
         <a href="{% url 'statistics' %}" class="btn btn-warning"
           >View Statistical details</a
         >
-      </p>
-      <p>
-        <a href="{% url 'filters' %}" class="btn btn-info">Filter</a>
       </p>
 
       <p>
