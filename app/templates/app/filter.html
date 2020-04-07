@@ -43,9 +43,9 @@
         </tr>
         {% for obj in filters %}
         <tr>
-          <td>{{obj.user.first_name}}</td>
-          <td>{{obj.user.last_name}}</td>
+          <td>{{obj.user.first_name}} {{obj.user.last_name}}</td>
           <td>{{obj.user.email}}</td>
+          <td>{{obj.user.profile.gender}}</td>
           <td>{{obj.user.profile.phone}}</td>
           <td>{{obj.user.profile.type_of_sickness}}</td>
         </tr>

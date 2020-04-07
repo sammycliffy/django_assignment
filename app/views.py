@@ -112,7 +112,7 @@ def statistics(request):
 
 
 def records(request):
-    profile = Profile.objects.exclude(is_staff = True)
+    profile = Profile.objects.exclude(type_of_sickness = None)
     data = {
         'profile':profile
     }
