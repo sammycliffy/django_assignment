@@ -26,7 +26,7 @@ SECRET_KEY = '*$85zqav3#tvw)l=ct&3$&z(h$i*u&dua$ls8%_ci9tdfxl783'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
+    'https://myassignment15.herokuapp.com'
 ]
 
 
